@@ -1,3 +1,5 @@
+import './App.css';
+
 import { useState } from "react";
 
 import ZombieFightersList from './components/ZombieFightersList/ZombieFightersList.jsx';
@@ -147,26 +149,53 @@ const App = () => {
   {/* ------------------------Return-------------------------------- */}
   return (
     <>
-      <h1>Zombie Fighters</h1>
-      
-      <h3>Money: {money}</h3>
-      <h3>Team Strenght: {totalStrength}</h3>
-      <h3>Team agility: {totalAgility}</h3>
-      
-      <h3>Team</h3>
-      <TeamList 
-        fighters={team} 
-        handleRemoveFighter={handleRemoveFighter}
-      />
+      <div className="app">
+        <header className="app-header">
+          <h1 className="title">🧟 Zombie Fighters</h1>  
 
-      <h4>{team.length === 0 ? 'Pick some team members' : '' }</h4>
+          <div className="stats-container">
+            <div className="stat-card">
+              <span className="stat-label">Money</span>
+              <span className="stat-value money">${money}</span>
+            </div>
+            <div className="stat-card">
+              <span className="stat-label">Team Strength</span>
+              <span className="stat-value strength">{totalStrength}</span>
+            </div>
+            <div className="stat-card">
+              <span className="stat-label">Team Agility</span>
+              <span className="stat-value agility">{totalAgility}</span>
+            </div>
+          </div>
+        </header>
 
-      <div className="message">{message}</div>
-      <h3>Fighters</h3>
-      <ZombieFightersList 
-        fighters={zombieFighters} 
-        handleAddFighter={handleAddFighter}
-      />
+        <div className="main-content">
+          <section className="team-section">
+            <h2 className="section-title">Your Team</h2>
+            {team.length === 0 ? (
+              <div className="empty-state">
+              <p>Pick some team members to start fighting zombies!</p>
+              </div>
+              ) : ''}
+              
+              <TeamList 
+                fighters={team} 
+                handleRemoveFighter={handleRemoveFighter} 
+              />
+          </section>
+          
+          <div className="message">{message}</div>
+          
+          <section className="fighters-section">
+            <h2 className="section-title">Available Fighters</h2>
+            <ZombieFightersList 
+              fighters={zombieFighters} 
+              handleAddFighter={handleAddFighter}
+            />
+          </section>
+        </div>
+
+      </div>
 
     </>
   );

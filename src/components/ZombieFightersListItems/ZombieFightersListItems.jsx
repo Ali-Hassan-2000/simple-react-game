@@ -4,12 +4,12 @@ const ZombieFightersListItems = (props) => {
     return(
         <li> 
         <img src={props.img} alt={props.name} /> <br />
-        {props.name} <br />
-        {props.price} <br />
-        {props.strength} <br />
-        {props.agility} 
+        name: {props.name} <br />
+        price: ${props.price} <br />
+        strength: {props.strength} <br />
+        agility: {props.agility} 
 
-        <button onClick={() => props.handleAddFighter(props.id)}
+        <button className="remove-button" onClick={() => props.handleAddFighter(props.id)}
         >Add</button>
         </li>
     )

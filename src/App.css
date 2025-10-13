@@ -14,3 +14,263 @@ li {
   border: whitesmoke 3px solid;
   border-radius: 8px;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #e94560;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e94560;
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 3rem;
+  color: #e94560;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: rgba(233, 69, 96, 0.1);
+  border: 1px solid #e94560;
+  border-radius: 10px;
+  padding: 15px 25px;
+  text-align: center;
+  min-width: 120px;
+  backdrop-filter: blur(10px);
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.stat-value.money {
+  color: #4ecdc4;
+}
+
+.stat-value.strength {
+  color: #ff6b6b;
+}
+
+.stat-value.agility {
+  color: #45b7d1;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: #e94560;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 1px solid #e94560;
+  padding-bottom: 10px;
+}
+
+.team-section, .fighters-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid rgba(233, 69, 96, 0.3);
+}
+
+.empty-state {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  padding: 40px 20px;
+}
+
+.message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+}
+
+.message.success {
+  background: #4ecdc4;
+  color: #1a1a2e;
+  border: 1px solid #45b7d1;
+}
+
+.message.error {
+  background: #ff6b6b;
+  color: white;
+  border: 1px solid #e94560;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-container {
+    gap: 15px;
+  }
+  
+  .stat-card {
+    min-width: 100px;
+    padding: 10px 15px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+}
+
+/* Button Styles */
+button {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  margin-top: 12px;
+  width: 100%;
+}
+
+/* Add Button */
+button.add-button {
+  background: #4ecdc4;
+  color: #1a1a2e;
+  border: 2px solid #45b7d1;
+}
+
+button.add-button:hover {
+  background: #45b7d1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(78, 205, 196, 0.3);
+}
+
+/* Remove Button */
+button.remove-button {
+  background: #e94560;
+  color: white;
+  border: 2px solid #ff6b6b;
+}
+
+button.remove-button:hover {
+  background: #ff6b6b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(233, 69, 96, 0.3);
+}
+
+/* List item styles for both team and fighters */
+li {
+  list-style: none;
+  margin: 8px;
+  padding: 16px;
+  border: 1px solid rgba(233, 69, 96, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+li:hover {
+  transform: translateY(-3px);
+  border-color: #e94560;
+  box-shadow: 0 4px 12px rgba(233, 69, 96, 0.2);
+}
+
+/* Image styles */
+li img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 2px solid rgba(233, 69, 96, 0.5);
+  align-self: center;
+}
+
+/* Text styles inside list items */
+li {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Add spacing between each line */
+li br {
+  display: block;
+  margin-bottom: 8px;
+  content: "";
+}
+
+/* Specific styling for the stats text */
+li {
+  text-align: left;
+}
+
+/* Flex container for lists */
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
