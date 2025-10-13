@@ -2,6 +2,9 @@ import { useState } from "react";
 import ZombieFightersList from './components/ZombieFightersList/ZombieFightersList.jsx';
 import ZombieFightersListItems from './components/ZombieFightersListItems/ZombieFightersListItems.jsx';
 
+import TeamList from './components/TeamList/TeamList.jsx';
+import TeamListItems from './components/TeamListItems/TeamListItems.jsx';
+
 const App = () => {
 
   const [team, setTeam] = useState([]);
@@ -125,6 +128,11 @@ const App = () => {
       <h3>Team Strenght: {}</h3>
       <h3>Team agility: {}</h3>
       <h3>Team</h3>
+
+      <TeamList 
+        fighters={team} 
+      />
+
       <h4>{team.length === 0 ? 'Pick some team members' : '' }</h4>
 
       <div className="message">{message}</div>
