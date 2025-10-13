@@ -125,7 +125,7 @@ const App = () => {
       <h3>Team Strenght: {}</h3>
       <h3>Team agility: {}</h3>
       <h3>Team</h3>
-      <h5>Pick some team members</h5>
+      <h4>{team.length === 0 ? 'Pick some team members' : '' }</h4>
 
       <div className="message">{message}</div>
       <h3>Fighters</h3>
