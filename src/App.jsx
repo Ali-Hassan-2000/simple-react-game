@@ -118,8 +118,25 @@ const App = () => {
       }
     })
 
-    console.log(totalStrength);
-    console.log(totalAgility);
+    // Clear the message after 2 seconds
+    setTimeout(() => {setMessage("")}, 2000);
+  };
+
+  const handleRemoveFighter = (id) => {
+    
+    team.forEach((player) => {
+      if (player.id === id) {
+
+        setZombieFighters([...zombieFighters, player]); //remove the fighter from team
+        
+        setMoney(money + player.price);
+        
+        setMessage(`removed ${player.name} from your team!`);
+        
+        setTeam(team.filter(player => player.id !== id));
+      }
+    })
+
     // Clear the message after 2 seconds
     setTimeout(() => {setMessage("")}, 2000);
   };
@@ -139,6 +156,7 @@ const App = () => {
       <h3>Team</h3>
       <TeamList 
         fighters={team} 
+        handleRemoveFighter={handleRemoveFighter}
       />
 
       <h4>{team.length === 0 ? 'Pick some team members' : '' }</h4>

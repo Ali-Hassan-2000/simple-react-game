@@ -1,3 +1,5 @@
+import App from '../../App.jsx';
+
 const TeamListItems = (props) => {
     return(
         <li> 
@@ -5,7 +7,10 @@ const TeamListItems = (props) => {
         {props.name} <br />
         {props.price} <br />
         {props.strength} <br />
-        {props.agility} 
+        {props.agility}
+
+        <button onClick={() => props.handleRemoveFighter(props.id)}
+        >Remove</button>
         </li>
     )
 };

@@ -12,6 +12,8 @@ const TeamList = (props) => {
                     price = {player.price}
                     strength = {player.strength}
                     agility = {player.agility} 
+
+                    handleRemoveFighter={props.handleRemoveFighter}
                 />
             ))}
         </ul>
