@@ -91,18 +91,30 @@ const App = () => {
 
 
   {/* ------------------------Set states-------------------------------- */}
+
+   const handleAddFighter = (modeValue) => {
+    setTeam([...team, modeValue]);
+  };
+
+  {/* ------------------------Function states-------------------------------- */}
+
+
+  {/* ------------------------Return-------------------------------- */}
   return (
     <>
       <h1>Zombie Fighters</h1>
       
-      <h3></h3>
-      <h3></h3>
-      <h3></h3>
-      <h3></h3>
-      <h5></h5>
+      <h3>Money: {money}</h3>
+      <h3>Team Strenght: {}</h3>
+      <h3>Team agility: {}</h3>
+      <h3>Team</h3>
+      <h5>Pick some team members</h5>
 
       <h3>Fighters</h3>
-      <ZombieFightersList fighters={zombieFighters}/>
+      <ZombieFightersList 
+        fighters={zombieFighters} 
+        handleAddFighter={handleAddFighter}
+      />
     </>
   );
 }

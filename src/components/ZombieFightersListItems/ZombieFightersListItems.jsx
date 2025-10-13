@@ -1,3 +1,5 @@
+import App from '../../App.jsx';
+
 const ZombieFightersListItems = (props) => {
     return(
         <li> 
@@ -6,6 +8,16 @@ const ZombieFightersListItems = (props) => {
         {props.price} <br />
         {props.strength} <br />
         {props.agility} 
+
+        <button onClick={() => props.handleAddFighter({
+            id: props.id, 
+            name: props.name, 
+            price: props.price,
+            strength: props.strength, 
+            agility: props.agility, 
+            img: props.img})}
+        >Add</button>
+        
         </li>
     )
 };
