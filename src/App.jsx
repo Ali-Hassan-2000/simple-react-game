@@ -90,6 +90,7 @@ const App = () => {
   ]);
 
 
+  const [message, setMessage] = useState(""); // I added this State to display the message
   {/* ------------------------Set states-------------------------------- */}
 
    const handleAddFighter = (id) => {
@@ -100,12 +101,16 @@ const App = () => {
         if (money >= player.price) {
           setTeam([...team, player]); //add the fighter to team first then remove it from the array
           setZombieFighters(zombieFighters.filter(player => player.id !== id));
-          setMoney(money - player.price);          
+          setMoney(money - player.price);   
+          setMessage(`Added ${player.name} to your team!`);       
         } else{
-          console.log("Not enough money");
+          setMessage("Not enough money");
         }
       }
     })
+
+    // Clear the message after 2 seconds
+    setTimeout(() => {setMessage("")}, 2000);
   };
 
   {/* ------------------------Function states-------------------------------- */}
@@ -121,7 +126,8 @@ const App = () => {
       <h3>Team agility: {}</h3>
       <h3>Team</h3>
       <h5>Pick some team members</h5>
-      
+
+      <div className="message">{message}</div>
       <h3>Fighters</h3>
       <ZombieFightersList 
         fighters={zombieFighters} 
