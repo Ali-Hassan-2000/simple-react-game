@@ -5,8 +5,8 @@ const ZombieFightersList = (props) => {
         <ul>
             {props.fighters.map((player, idx) => (
                 <ZombieFightersListItems
-                    key = {idx} 
-                    id={player.id} 
+                    key = {idx}
+                    id ={player.id} 
                     img = {player.img}
                     name = {player.name}
                     price = {player.price}

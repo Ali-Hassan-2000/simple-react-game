@@ -92,8 +92,20 @@ const App = () => {
 
   {/* ------------------------Set states-------------------------------- */}
 
-   const handleAddFighter = (modeValue) => {
-    setTeam([...team, modeValue]);
+   const handleAddFighter = (id) => {
+    
+    zombieFighters.forEach((player) => {
+      if (player.id === id) {
+
+        if (money >= player.price) {
+          setTeam([...team, player]); //add the fighter to team first then remove it from the array
+          setZombieFighters(zombieFighters.filter(player => player.id !== id));
+          setMoney(money - player.price);          
+        } else{
+          console.log("Not enough money");
+        }
+      }
+    })
   };
 
   {/* ------------------------Function states-------------------------------- */}
@@ -109,12 +121,13 @@ const App = () => {
       <h3>Team agility: {}</h3>
       <h3>Team</h3>
       <h5>Pick some team members</h5>
-
+      
       <h3>Fighters</h3>
       <ZombieFightersList 
         fighters={zombieFighters} 
         handleAddFighter={handleAddFighter}
       />
+      
     </>
   );
 }
