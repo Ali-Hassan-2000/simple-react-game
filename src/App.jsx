@@ -1,9 +1,7 @@
 import { useState } from "react";
-import ZombieFightersList from './components/ZombieFightersList/ZombieFightersList.jsx';
-import ZombieFightersListItems from './components/ZombieFightersListItems/ZombieFightersListItems.jsx';
 
+import ZombieFightersList from './components/ZombieFightersList/ZombieFightersList.jsx';
 import TeamList from './components/TeamList/TeamList.jsx';
-import TeamListItems from './components/TeamListItems/TeamListItems.jsx';
 
 const App = () => {
 
@@ -94,6 +92,10 @@ const App = () => {
 
 
   const [message, setMessage] = useState(""); // I added this State to display the message
+
+  // take all the items in the list then calculate the total
+  const totalStrength = team.reduce((acc, player) => acc + player.strength, 0);
+  const totalAgility = team.reduce((acc, player) => acc + player.agility, 0);
   {/* ------------------------Set states-------------------------------- */}
 
    const handleAddFighter = (id) => {
@@ -103,15 +105,21 @@ const App = () => {
 
         if (money >= player.price) {
           setTeam([...team, player]); //add the fighter to team first then remove it from the array
+          
+          setMoney(money - player.price);  
+          
+          setMessage(`Added ${player.name} to your team!`);
+          
           setZombieFighters(zombieFighters.filter(player => player.id !== id));
-          setMoney(money - player.price);   
-          setMessage(`Added ${player.name} to your team!`);       
+       
         } else{
           setMessage("Not enough money");
         }
       }
     })
 
+    console.log(totalStrength);
+    console.log(totalAgility);
     // Clear the message after 2 seconds
     setTimeout(() => {setMessage("")}, 2000);
   };
@@ -125,10 +133,10 @@ const App = () => {
       <h1>Zombie Fighters</h1>
       
       <h3>Money: {money}</h3>
-      <h3>Team Strenght: {}</h3>
-      <h3>Team agility: {}</h3>
+      <h3>Team Strenght: {totalStrength}</h3>
+      <h3>Team agility: {totalAgility}</h3>
+      
       <h3>Team</h3>
-
       <TeamList 
         fighters={team} 
       />
@@ -141,7 +149,7 @@ const App = () => {
         fighters={zombieFighters} 
         handleAddFighter={handleAddFighter}
       />
-      
+
     </>
   );
 }
