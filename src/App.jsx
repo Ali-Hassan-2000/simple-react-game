@@ -16,7 +16,7 @@ const App = () => {
       price: 12,
       strength: 6,
       agility: 4,
-      img: '../public/Bruce_Lee_1973.jpg',
+      img: 'https://res.cloudinary.com/dnmdmz7qo/image/upload/v1760647907/Bruce_Lee_1973_wq1rkm.jpg',
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const App = () => {
       price: 10,
       strength: 5,
       agility: 5,
-      img: '../public/Bruce_Lee_1973.jpg',
+      img: 'https://res.cloudinary.com/dnmdmz7qo/image/upload/v1760647907/Bruce_Lee_1973_wq1rkm.jpg',
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ const App = () => {
       price: 18,
       strength: 7,
       agility: 8,
-      img: '../public/Bruce_Lee_1973.jpg',
+      img: 'https://res.cloudinary.com/dnmdmz7qo/image/upload/v1760647907/Bruce_Lee_1973_wq1rkm.jpg',
     },
     {
       id: 4,
@@ -40,7 +40,7 @@ const App = () => {
       price: 14,
       strength: 7,
       agility: 6,
-      img: '../public/Bruce_Lee_1973.jpg',
+      img: 'https://res.cloudinary.com/dnmdmz7qo/image/upload/v1760647907/Bruce_Lee_1973_wq1rkm.jpg',
     },
     {
       id: 5,
@@ -48,7 +48,7 @@ const App = () => {
       price: 20,
       strength: 6,
       agility: 8,
-      img: '../public/Bruce_Lee_1973.jpg',
+      img: 'https://res.cloudinary.com/dnmdmz7qo/image/upload/v1760647907/Bruce_Lee_1973_wq1rkm.jpg',
     },
     {
       id: 6,
@@ -56,7 +56,7 @@ const App = () => {
       price: 15,
       strength: 5,
       agility: 7,
-      img: '../public/Bruce_Lee_1973.jpg',
+      img: 'https://res.cloudinary.com/dnmdmz7qo/image/upload/v1760647907/Bruce_Lee_1973_wq1rkm.jpg',
     },
     {
       id: 7,
@@ -64,7 +64,7 @@ const App = () => {
       price: 16,
       strength: 6,
       agility: 5,
-      img: '../public/Bruce_Lee_1973.jpg',
+      img: 'https://res.cloudinary.com/dnmdmz7qo/image/upload/v1760647907/Bruce_Lee_1973_wq1rkm.jpg',
     },
     {
       id: 8,
@@ -72,7 +72,7 @@ const App = () => {
       price: 11,
       strength: 8,
       agility: 3,
-      img: '../public/Bruce_Lee_1973.jpg',
+      img: 'https://res.cloudinary.com/dnmdmz7qo/image/upload/v1760647907/Bruce_Lee_1973_wq1rkm.jpg',
     },
     {
       id: 9,
@@ -80,7 +80,7 @@ const App = () => {
       price: 17,
       strength: 5,
       agility: 9,
-      img: '../public/Bruce_Lee_1973.jpg',
+      img: 'https://res.cloudinary.com/dnmdmz7qo/image/upload/v1760647907/Bruce_Lee_1973_wq1rkm.jpg',
     },
     {
       id: 10,
@@ -88,7 +88,7 @@ const App = () => {
       price: 22,
       strength: 7,
       agility: 6,
-      img: '../public/Bruce_Lee_1973.jpg',
+      img: 'https://res.cloudinary.com/dnmdmz7qo/image/upload/v1760647907/Bruce_Lee_1973_wq1rkm.jpg',
     },
   ]);
 
