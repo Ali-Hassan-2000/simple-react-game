@@ -1,4 +1,4 @@
-# [game link](https://simple-react-game-six.vercel.app/)
+# [game link](https://simple-react-game-beta.vercel.app/)
 
 
 
